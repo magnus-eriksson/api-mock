@@ -2,6 +2,12 @@
 
     <h1>Resource</h1>
 
+    To be able to make these API-calls, you need to add the API token in the header:
+
+    <div class="code">
+        API-TOKEN: <?= $this->config('auth.token') ?>
+    </div>
+
     <div id="resources">
 
         <?php foreach ($resources as $resource) : ?>
@@ -13,7 +19,7 @@
             </div>
 
             <div class="path">
-                <a href="/api<?= $resource->path ?>" target="_blank"><?= $this->e($resource->path) ?></a>
+                <a href="<?= $this->getFullUrl('/api' . $resource->path) ?>" target="_blank"><?= $this->getFullUrl('/api' . $resource->path) ?></a>
             </div>
 
         </div>

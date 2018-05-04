@@ -19,8 +19,11 @@ $app->router->filter('adminAuth', function () use ($app) {
 });
 
 $app->router->filter('apiAuth', function () use ($app) {
-    $auth = $app->container->make('Maer\Auth\AuthInterface');
-    if (!$auth->hasCurrentUser() && $app->request->headers('APP-TOKEN') !== '1234') {
+    $auth   = $app->container->make('Maer\Auth\AuthInterface');
+    $token  = $app->config->get('auth.token');
+    $header = $app->request->headers('X-API-TOKEN');
+
+    if (!$auth->hasCurrentUser() && $token !== $header) {
         $json = new Enstart\Entity\JsonResponseEntity;
         return $json->setCode(401)
             ->setMessage('Unauthorized request');

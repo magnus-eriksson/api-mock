@@ -45,6 +45,6 @@ $app->router->group(['prefix' => 'admin'], function ($r) {
  * API
  * ------------------------------------
  */
-$app->router->group(['prefix' => 'api'], function ($r) {
+$app->router->group(['prefix' => 'api', 'before' => 'apiAuth'], function ($r) {
     $r->any('(:all)', 'App\Controllers\ApiController@getResource');
 });

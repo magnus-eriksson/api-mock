@@ -88,6 +88,14 @@
         flex-grow: 1;
     }
 
+    .code {
+        padding: 5px;
+        border: solid 1px #ddd;
+        background-color: #f3f3f3;
+        font: 14px consolas, monospace;
+        margin: 3px 0 15px 0;
+    }
+
     #resources {
         border-top: solid 1px #eee;
     }

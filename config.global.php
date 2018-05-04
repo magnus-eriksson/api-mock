@@ -23,6 +23,7 @@ return [
     'auth' => [
         'username' => 'Change me in your local config',
         'password' => 'Change me in your local config',
+        'token'    => 'Change me in your local config',
     ],
 
     'data' => [
