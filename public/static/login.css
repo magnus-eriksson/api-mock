@@ -1,0 +1,88 @@
+/*
+ * INIT
+ * --------------------------------------
+ */
+
+    @-ms-viewport {
+        width: device-width;
+    }
+
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #fff;
+        font: 14px "Open Sans", sans-serif;
+        color: #444;
+        margin: 0;
+        padding: 20px;
+    }
+
+    form, img {
+        border: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .clearfix:after {
+        content: ".";
+        display: block;
+        clear: both;
+        visibility: hidden;
+        line-height: 0;
+        height: 0;
+    }
+
+
+/*
+ * LAYOUT
+ * --------------------------------------
+ */
+
+    #wrapper {
+        position: relative;
+        margin: 0 auto;
+        padding-top: 30px;
+        max-width: 250px;
+    }
+
+    h1 {
+        font-size: 28px;
+        font-weight: 300;
+        margin: 0 0 15px 0;
+        padding: 0;
+    }
+
+    #error {
+        color: #e00;
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-size: 14px;
+        display: block;
+        margin: 0 0 3px 0;
+        text-transform: uppercase;
+    }
+
+    input {
+        border: solid 1px #ccc;
+        padding: 6px;
+        font: inherit;
+        color: #666;
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    button {
+        border: 0;
+        font: inherit;
+        color: #fff;
+        background-color: #222;
+        padding: 7px;
+        width: 100%;
+    }
