@@ -16,10 +16,9 @@ $(function () {
             }
 
             if (!$('#id').val()) {
-                $('#id').val(response.data.id);
+                location.href = '/admin/edit/' + response.data.id;
             }
 
-            showSuccess('Resource successfully saved');
             $('#resource-delete').removeClass('hidden');
         }).fail(function () {
             showErrors();

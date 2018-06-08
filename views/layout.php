@@ -32,5 +32,13 @@
     </div>
     <script src="<?= $this->asset('/static/main.js') ?>"></script>
     <script src="<?= $this->asset('/static/form.js') ?>"></script>
+
+
+    <script>
+        <?php if (!empty($added) && $added === true) : ?>
+            showSuccess('Resource successfully added');
+        <?php endif ?>
+    </script>
+
 </body>
 </html>

@@ -37,6 +37,4 @@
             <button type="button" class="danger <?= !$resource->id ? 'hidden' : '' ?>" id="resource-delete" data-url="<?= $this->route('admin.resources.delete') ?>">Delete</button>
         </div>
 
-
-
     </form>

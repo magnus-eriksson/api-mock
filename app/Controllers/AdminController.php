@@ -65,6 +65,17 @@ class AdminController extends Controller
             return $this->routeRedirect('admin.home');
         }
 
+        $added = false;
+
+        if (($_SESSION['added'] ?? false) === true) {
+            $added = true;
+            unset($_SESSION['added']);
+        }
+
+        $this->views->addData([
+            'added' => $added
+        ]);
+
         return $this->views->render('resource', [
             'resource' => $resource,
         ]);
@@ -113,6 +124,9 @@ class AdminController extends Controller
             $response = $this->resources->update($data);
         } else {
             $response = $this->resources->add($data);
+            if ($response) {
+                $_SESSION['added'] = true;
+            }
         }
 
         if (!$response) {
