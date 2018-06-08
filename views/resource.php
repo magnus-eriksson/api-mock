@@ -16,7 +16,16 @@
         <div class="form-item">
             <label for="path">Path <span class="note">Without <code>"/api"</code></span></label>
             <input type="text" value="<?= $this->e($resource->path) ?>" name="path" id="path" />
+
+            <?php if ($resource->path) : ?>
+
+                <div class="path-container">
+                    <a href="<?= $this->getFullUrl('/api' . $resource->path) ?>" target="_blank"><?= $this->getFullUrl('/api' . $resource->path) ?></a>
+                </div>
+
+            <?php endif ?>
         </div>
+
 
         <div class="form-item">
             <label for="response">Response <span class="note">Use Json format</span></label>

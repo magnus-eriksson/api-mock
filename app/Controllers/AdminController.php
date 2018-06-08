@@ -100,6 +100,10 @@ class AdminController extends Controller
             'content' => $this->request->post('content'),
         ]);
 
+        if (strpos($data->path, '/') !== 0) {
+            $data->path = '/' . $data->path;
+        }
+
         $errors = $this->resources->validate($data->toArray());
         if ($errors) {
             return $json->setErrors($errors);
